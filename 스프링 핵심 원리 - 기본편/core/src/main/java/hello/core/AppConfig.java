@@ -23,6 +23,7 @@ public class AppConfig {
         return new MemoryMemberRepository();
     }
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+//        return new FixDiscountPolicy(); //1000원 할인 적용하기
+        return new RateDiscountPolicy(); //10% 할인율 적용하기
     }
 }
