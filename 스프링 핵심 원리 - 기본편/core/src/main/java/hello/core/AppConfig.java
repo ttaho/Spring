@@ -9,19 +9,25 @@ import hello.core.member.MemoryMemberRepository;
 import hello.core.order.Order;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class AppConfig {
+    @Bean
     public MemberService memberService() {
 
         return new MemberServiceImpl(memberRepository());
     }
-
+    @Bean
     public OrderService orderService() {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
-    private static MemoryMemberRepository memberRepository() {
+    @Bean
+    public MemoryMemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
+    @Bean
     public DiscountPolicy discountPolicy() {
 //        return new FixDiscountPolicy(); //1000원 할인 적용하기
         return new RateDiscountPolicy(); //10% 할인율 적용하기
