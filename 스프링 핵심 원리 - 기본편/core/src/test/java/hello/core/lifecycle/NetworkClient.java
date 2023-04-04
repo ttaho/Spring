@@ -2,8 +2,6 @@ package hello.core.lifecycle;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
 
 public class NetworkClient {
 
@@ -32,9 +30,7 @@ public class NetworkClient {
         System.out.println("close: " + url);
     }
 
-
-
-
+    
     //스프링 의존관계 주입이 끝나고 그 이후에 호출
     @PostConstruct
     public void init() {
