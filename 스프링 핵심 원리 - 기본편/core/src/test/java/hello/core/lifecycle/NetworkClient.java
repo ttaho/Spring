@@ -30,7 +30,7 @@ public class NetworkClient {
         System.out.println("close: " + url);
     }
 
-    
+
     //스프링 의존관계 주입이 끝나고 그 이후에 호출
     @PostConstruct
     public void init() {
